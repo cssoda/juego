@@ -1,14 +1,14 @@
 var levels = [
   {
-    helpTitle : "Select elements by their type",
-    selectorName : "Type Selector",
-    doThis : "Select the plates",
+    doThis : "Selecciona los <k>platos<t>plates</t></k>",
     selector : "plate",
+    selectorName : "Selector de Tipo",
+    helpTitle : "Selecciona elementos según su Tipo",
     syntax : "A",
-    help : "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    help : "Selecciona todos los elementos de Tipo <strong>A</strong>.<br/>Tipo se refiere al tipo de tag, de modo que <tag>div</tag>, <tag>p</tag> y <tag>ul</tag> son todos diferentes <strong>tipos</strong> de elementos.",
     examples : [
-      '<strong>div</strong> selects all <tag>div</tag> elements.',
-      '<strong>p</strong> selects all <tag>p</tag> elements.',
+      '<strong>div</strong> selecciona todos los elementos de tipo <tag>div</tag>.',
+      '<strong>p</strong> selecciona todos los elementos <tag>p</tag> (párrafos).',
     ],
     boardMarkup: `
     <plate/>
@@ -16,15 +16,15 @@ var levels = [
     `
   },
   {
-    doThis : "Select the tray boxes",
+    doThis : "Selecciona las <k>bandejas<t>trays</t></k>",
     selector : "tray",
+    selectorName : "Selector de Tipo",
+    helpTitle : "Selecciona elementos según su Tipo",
     syntax : "A",
-    helpTitle : "Select elements by their type",
-    selectorName : "Type Selector",
-    help : "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    help : "Selecciona todos los elementos de Tipo <strong>A</strong>.<br/>Tipo se refiere al tipo de tag, de modo que <tag>div</tag>, <tag>p</tag> y <tag>ul</tag> son todos diferentes <strong>tipos</strong> de elementos.",
     examples : [
-      '<strong>div</strong> selects all <tag>div</tag> elements.',
-      '<strong>p</strong> selects all <tag>p</tag> elements.',
+      '<strong>div</strong> selecciona todos los elementos de tipo <tag>div</tag>.',
+      '<strong>p</strong> selecciona todos los elementos <tag>p</tag> (párrafos).',
     ],
     boardMarkup: `
     <tray/>
@@ -33,15 +33,15 @@ var levels = [
     `
   },
   {
-    doThis : "Select the fancy plate",
+    doThis : "Selecciona el plato <k>elegante<t>fancy</t></k>",
     selector : "#fancy",
-    selectorName: "ID Selector",
-    helpTitle: "Select elements with an ID",
+    selectorName: "Selector por ID",
+    helpTitle: "Selecciona a un elemento dado su ID",
     syntax: "#id",
-    help : 'Selects the element with a specific <strong>id</strong>. You can also combine the ID selector with the type selector.',
+    help : 'Selecciona al único elemento que tiene un <strong>id</strong> específico.<br/>También puedes combinar el Selector de ID con el Selector de Tipo.',
     examples : [
-      '<strong>#cool</strong> selects any element with <strong>id="cool"</strong>',
-      '<strong>ul#long</strong> selects <tag>ul id="long"</tag>'
+      '<strong>#cool</strong> selecciona al elemento que sea que tenga su <strong>id="cool"</strong>',
+      '<strong>ul#long</strong> selecciona al tag <tag>ul id="long"</tag>'
     ],
     boardMarkup : `
     <plate id="fancy"/>
@@ -50,15 +50,15 @@ var levels = [
     `
   },
   {
-    helpTitle: "Select an element inside another element",
-    selectorName : "Descendant Selector",
-    doThis : "Select the apple on the plate",
+    doThis : "Selecciona la <k>manzana<t>apple</t></k> que está en el plato",
     selector : "plate apple",
+    selectorName : "Selector Descendiente",
+    helpTitle: "Selecciona un elemento dentro de otro elemento dado",
     syntax: "A&nbsp;&nbsp;B",
-    help : "Selects all <strong>B</strong> inside of <strong>A</strong>. <strong>B</strong> is called a descendant because it is inside of another element.",
+    help : "Selecciona a todos los <strong>B</strong> que estén contenidos dentro de <strong>A</strong>.<br/><strong>B</strong> se considera <em>descendiente</em> porque está dentro de otro elemento (o <em>desciende</em> de él)",
     examples : [
-      '<strong>p&nbsp;&nbsp;strong</strong> selects all <tag>strong</tag> elements that are inside of any <tag>p</tag>',
-      '<strong>#fancy&nbsp;&nbsp;span</strong> selects any <tag>span</tag> elements that are inside of the element with <strong>id="fancy"</strong>',
+      '<strong>p&nbsp;&nbsp;strong</strong> selecciona a todos los elementos <tag>strong</tag> que estén dentro de cualquier <tag>p</tag>',
+      '<strong>#fancy&nbsp;&nbsp;span</strong> selecciona a cualquier elemento <tag>span</tag> que esté contenido dentro del elemento con <strong>id="fancy"</strong>',
     ],
     boardMarkup : `
     <tray/>
@@ -69,13 +69,13 @@ var levels = [
     `
   },
   {
-    doThis : "Select the lemon on the fancy plate",
+    doThis : "Selecciona al <k>limón<t>lemon</t></k> en el plato <k>elegante<t>fancy</t></k>",
     selector : "#fancy lemon",
-    helpTitle: "Combine the Descendant & ID Selectors",
+    helpTitle: "Combina los Selectores por ID y Descendiente",
     syntax: "#id&nbsp;&nbsp;A",
-    help : 'You can combine any selector with the descendent selector.',
+    help : 'Puedes combinar cualquier selector con el selector descendiente.',
     examples : [
-      '<strong>#cool&nbsp;span</strong> selects all <tag>span</tag> elements that are inside of elements with <strong>id="cool"</strong>'
+      '<strong>#cool&nbsp;span</strong> selecciona todos los elementos <tag>span</tag> que estén dentro del elemento con <strong>id="cool"</strong>'
     ],
     boardMarkup : `
     <tray>
@@ -90,14 +90,14 @@ var levels = [
     `
   },
   {
-    doThis : "Select the small apples",
+    doThis : "Selecciona las manzanas <k>pequeñas<t>small</t></k>",
     selector : ".small",
-    selectorName: "Class Selector",
-    helpTitle: "Select elements by their class",
+    selectorName: "Selector de Clases",
+    helpTitle: "Selecciona elementos según su(s) clase(s)",
     syntax: ".classname",
-    help : 'The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.',
+    help : 'El selector de clases selecciona todos los elementos que tengan esa clase en su atributo de clase (class).<br/>Los Elementos sólo pueden tener un ID, pero pueden tener muchas clases.',
     examples : [
-    '<strong>.neato</strong> selects all elements with <strong>class="neato"</strong>'
+    '<strong>.neato</strong> selecciona todos los elementos que tengan la clase "neato", como en: <strong>class="neato"</strong>'
     ],
     boardMarkup : `
     <apple/>
@@ -109,14 +109,14 @@ var levels = [
     `
   },
   {
-    doThis : "Select the small oranges",
+    doThis : "Selecciona las <k>naranjas<t>orange</t></k> <k>pequeñas<t>small</t></k>",
     selector : "orange.small",
-    helpTitle: "Combine the Class Selector",
+    helpTitle: "Combina el Selector de Clases",
     syntax: "A.className",
-    help : 'You can combine the class selector with other selectors, like the type selector.',
+    help : 'Puedes combinar el selector de clases con otros selectores, como por ejemplo el Selector de Tipo.',
     examples : [
-      '<strong>ul.important</strong> selects all <tag>ul</tag> elements that have <strong>class="important"</strong>',
-      '<strong>#big.wide</strong> selects all elements with <strong>id="big"</strong> that also have <strong>class="wide"</strong>'
+      '<strong>ul.important</strong> selecciona todos los elementos <tag>ul</tag> que tienen <strong>class="important"</strong>',
+      '<strong>#big.wide</strong> selecciona al elemento con <strong>id="big"</strong> que además tenga <strong>class="wide"</strong>'
     ],
     boardMarkup :`
     <apple/>
@@ -132,11 +132,11 @@ var levels = [
     </plate>`
   },
   {
-    doThis : "Select the small oranges in the bentos",
+    doThis : "Selecciona las <k>naranjas<t>oranges</t></k> <k>pequeñas<t>small</t></k> de las <k>bandejas<t>trays</t></k>",
     selector : "tray orange.small",
-    syntax: "Put your back into it!",
-    helpTitle: "You can do it...",
-    help : 'Combine what you learned in the last few levels to solve this one!',
+    helpTitle: "Vamos! &#128170; Que sí puedes hacerlo!..",
+    syntax: "A ponerle empeño!",
+    help : 'Combina lo que has aprendido en los niveles anteriores para resolver éste!',
     boardMarkup : `
     <tray>
       <orange/>
