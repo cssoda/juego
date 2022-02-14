@@ -7,3 +7,5 @@
 ---
 
 ## [![ENG](https://flagcdn.com/24x18/us.png "English") Welcome!](locales/en/README.md)
+
+## [![ESP](https://flagcdn.com/24x18/es.png "English") Bienvenid@!](locales/es/README.md)
