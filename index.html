@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSSoda - Play & Enjoy learning CSS!</title>
+    <title>CSSoda - Divertirse Aprendiendo CSS!</title>
     <!--TODO Evaluate [and test] to upgrade this version -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js" integrity="sha512-h9kKZlwV1xrIcr2LwAPZhjlkx+x62mNwuQK5PAu9d3D+JXMNlGx8akZbqpXvp0vA54rz+DrqYVrzUGDMhwKmwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="locales/en/levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/restaurant.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js" integrity="sha512-Yk47FuYNtuINE1w+t/KT4BQ7JaycTCcrvlSvdK/jry6Kcxqg5vN7/svVWCxZykVzzJHaxXk5T9jnFemZHSYgnw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
@@ -18,7 +18,7 @@
     <meta property="og:url"           content="https://cssoda.github.io/juego/" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="CSSoda" />
-    <meta property="og:description"   content="A very fun game to help you learn and practice CSS Selectors." />
+    <meta property="og:description"   content="Un juego muy divertido para ayudarte a aprender y practicar los Selectores de CSS." />
     <meta property="og:image"         content="https://github.com/cssoda/juego/blob/main/images/fb-share.jpg" />
   </head>
 
@@ -29,7 +29,7 @@
         CSSoda
         <div class="logo"><div>&#129380;</div></div>
         <span class="share-menu">
-          Share
+          Compartir
           <a class="share-twitter" type="twitter" href="#"></a>
           <a class="share-facebook" type="facebook" href="#"></a>
           <a class="share-email" type="email" href="#"></a>
@@ -39,13 +39,13 @@
       <h2 class="order"></h2>
 
       <div class="note">
-        <h3>No worries, you've got this!</h3>
+        <h3>No te preocupes!, ya casi lo tienes.. Sí se puede!</h3>
         <p>
-          You're about to learn CSS Selectors!
-          Selectors are how you pick which element to apply styles to.
+          Estás por aprender más acerca de los selectores de CSS!
+          Los Selectores son las sentencias que te permiten seleccionar a cuáles elementos aplicarle los estilos css que defines en una regla de css.
         </p>
 
-        <h4>Exhibit 1 - A CSS Rule</h4>
+        <h4>Por ejemplo... en esta regla CSS</h4>
 
         <pre>
 p {
@@ -53,21 +53,21 @@ p {
 }</pre>
 
         <p>
-          Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.
+          Aquí, la "p" es el selector (en este ejemplo: selecciona todos los elementos <tag>p</tag> que son los párrafos en html) y les aplica ese estilo de margen inferior (margin-bottom).
         </p>
         <p>
-          To play, type in a CSS selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.
+          Para jugar, escribe un selector CSS en el editor de abajo, para seleccionar los elementos correctos de la mesa. Si los seleccionas correctamente, avanzas al siguiente nivel!.
         </p>
         <p>
-          Hover over the items on the table to see their HTML markup.
+          Pasa el puntero del mouse encima los items en la mesa para que veas cuál es su código correspondiente en HTML.
         </p>
         <p>
-          Get help with selectors on the right! &rarr;
+          Además, puedes conseguir ayuda importante leyendo las pistas acerca de cada selector, en la caja a la derecha! &rarr;
         </p>
-        <a class="note-toggle" href="#">Ok, got it!</a>
+        <a class="note-toggle" href="#">Ok, listo!</a>
       </div>
 
-      <a class="note-toggle" href="#">Help, I'm stuck!</a>
+      <a class="note-toggle" href="#">Ayuda! No entiendo! No sé qué hacer!</a>
 
       <div class="game-wrapper">
         <div class="table-wrapper">
@@ -85,23 +85,23 @@ p {
 
         <div class="editor-pane">
           <div class="input-header">
-            <div class="file-name">style.css</div> CSS Editor
+            <div class="file-name">style.css</div> Editor de CSS
           </div>
           <div class="file-window css-view">
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
             </div>
-              <input class="input-strobe" type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
+              <input class="input-strobe" type="text" placeholder="Escribe un selector CSS"/><span class="plus">+</span><div class="enter-button">enter</div>
             <div>
             {<br/>
-            /* Styles would go here. */<br/>
+            /* Los estilos van aquí. */<br/>
             }
             </div>
             <div class="help">
               <br/>
               /* <br/>
-              Type a number to skip to a level.<br/>
-              Ex &rarr; "5" for level 5 <br/>*/
+              Introduce un número para saltarte directamente a ese nivel.<br/>
+              Ejemplo &rarr; "5" para ir directo al nivel 5 <br/>*/
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ p {
         <div class="editor-pane html-view">
           <div class="input-header">
             <div class="file-name">table.html</div>
-            HTML Viewer
+            Vista del HTML
           </div>
           <div class="file-window">
             <div class="line-numbers">1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20</div>
@@ -120,10 +120,10 @@ p {
 
       <div class="what-is-this">
         <p>
-          Enhanced & Continued by <a href="https://github.com/salvatorius">Salvatorius</a>  &mdash; from a fork of <a href="https://github.com/flukeout/css-diner">css-dinner</a>!
+          Traducido, continuado y complementado por <a href="https://github.com/salvatorius">Salvatorius</a>  &mdash; a partir de un fork de <a href="https://github.com/flukeout/css-diner">css-dinner</a>!
         </p>
         <p>
-          Some feedback, questions, suggestions, errors? Please issue a ticket directly to <a href="https://github.com/cssoda/juego/issues">our Github respository</a>.
+          Preguntas, Sugerencias, Errores? Por favor crea un ticket en <a href="https://github.com/cssoda/juego/issues">nuestro repositorio Github</a>.
         </p>
       </div>
 
@@ -152,15 +152,15 @@ p {
           <h2 class="title"></h2>
           <h3 class="syntax"></h3>
           <div class="hint"></div>
-          <h4 class="examples-title">Examples</h4>
+          <h4 class="examples-title">Ejemplos</h4>
           <div class="examples"></div>
         </div>
       </div>
 
       <div class="level-menu">
-        <h2>Choose a level</h2>
+        <h2>Escoge un nivel</h2>
         <div class="levels"><!-- level links are inserted here--></div>
-        <a class="reset-progress" href="#">Reset Progress</a>
+        <a class="reset-progress" href="#">Reiniciar el Progreso</a>
       </div>
 
       <div class="level-menu-toggle-wrapper">
