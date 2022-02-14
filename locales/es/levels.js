@@ -154,15 +154,15 @@ var levels = [
     `
   },
   {
-    doThis : "Select all the plates and bentos",
+    doThis : "Selecciona todos los platos y <k>bandejas<t>trays</t></k>",
     selector : "plate,tray",
-    selectorName : "Comma Combinator",
-    helpTitle: "Combine, selectors, with... commas!",
+    selectorName : "Lista de Selectores (por coma)",
+    helpTitle: "Combina, selectores, con... comas!",
     syntax : "A, B",
-    help : 'Thanks to Shatner technology, this selects all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
+    help : 'Selecciona todos los elementos que coincidan con los selectores <strong>A</strong> y <strong>B</strong>.<br/>Puedes combinar cualquier par de selectores distintos de esta forma, e incluso puedes especificar más de 2 (todos separados por coma).',
     examples: [
-    '<strong>p, .fun</strong> selects all <tag>p</tag> elements as well as all elements with <strong>class="fun"</strong>',
-    '<strong>a, p, div</strong> selects all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
+    '<strong>p, .fun</strong> selecciona todos los elementos <tag>p</tag> junto con todos los elementos que tengan la clase <strong>class="fun"</strong>',
+    '<strong>a, p, div</strong> selecciona (al mismo tiempo) a todos los elementos de tipo <tag>a</tag>, <tag>p</tag> y <tag>div</tag>'
     ],
     boardMarkup : `
     <lemon class="small"/>
@@ -181,14 +181,15 @@ var levels = [
     `
   },
   {
-    doThis : "Select all the things!",
+    doThis : "Selecciona todos los objetos y frutas!",
     selector : "*",
-    selectorName:  "The Universal Selector",
-    helpTitle: "You can select everything!",
+    selectorName:  "El Selector Universal",
+    helpTitle: "Permite seleccionar todos los elementos!",
     syntax : "*",
-    help : 'You can select all elements with the universal selector! ',
+    help : 'Puedes seleccionar a todos los elementos de tu html con el selector universal!<br/>Combinado con un selector descendiente, nos permite seleccionar todos los elementos (sin importar tu tipo ni clase) que se encuentren dentro de un elemento dado',
     examples : [
-      '<strong>p *</strong> selects any element inside all <tag>p</tag> elements.',
+      '<strong>*</strong> selecciona absolutamente a todos los elementos de la página.',
+      '<strong>p *</strong> selecciona a todos los elementos que se encuentren dentro de cualquier <tag>p</tag>.',
     ],
     boardMarkup : `
     <apple/>
@@ -203,14 +204,14 @@ var levels = [
     `
   },
   {
-    doThis : "Select everything on a plate",
+    doThis : "Selecciona a todo lo que esté en un plato",
     selector : "plate *",
     syntax : "A&nbsp;&nbsp;*",
-    helpTitle: "Combine the Universal Selector",
-    help : 'This selects all elements inside of <strong>A</strong>.',
+    helpTitle: "Combinando el Selector Universal",
+    help : 'Esto selecciona a todos los elementos que se encuentren dentro de <strong>A</strong>.',
     examples : [
-      '<strong>p *</strong> selects every element inside all <tag>p</tag> elements.',
-      '<strong>ul.fancy *</strong> selects every element inside all <tag>ul class="fancy"</tag> elements.'
+      '<strong>p *</strong> selecciona a todos los elementos que se encuentren dentro de cualquier <tag>p</tag>.',
+      '<strong>ul.fancy *</strong> selecciona todos los elementos que estén dentro de todos los <tag>ul class="fancy"</tag>.'
     ],
     boardMarkup: `
     <plate id="fancy">
@@ -225,15 +226,17 @@ var levels = [
     </plate>`
   },
   {
-    doThis : "Select every apple that's next to a plate",
+    doThis : "Selecciona las manzanas que están<br/>al lado de un plato",
     selector : "plate + apple",
-    helpTitle: "Select an element that directly follows another element",
-    selectorName: "Adjacent Sibling Selector",
+    selectorName: "Selector de 'Hermanos Adyacentes",
+    helpTitle: "Selecciona al elemento que siga directamente después de otro elemento.",
     syntax : "A + B",
-    help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
+    help : "Esto selecciona a todos los elementos <strong>B</strong> que estén directamente a continuación de un elemento <strong>A</strong>." + 
+      "<br/>Por cada elemento <strong>A</strong> que se encuentre en el HTML, se seleccionará sólo un elemento <strong>B</strong> (si existe uno a su lado y al mismo nivel)." + 
+      "<br/>En el código HTML de este nivel, todos los elementos que tienen la misma 'indentación' están en el mismo nivel y se consideran 'hermanos'.",
     examples : [
-      '<strong>p + .intro</strong> selects every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
-      '<strong>div + a</strong> selects every <tag>a</tag> element that directly follows a <tag>div</tag>'
+      '<strong>p + .intro</strong> selecciona a todos los elementos con <strong>class="intro"</strong> que sigan directamente a continuación de (y al mismo nivel que) cualquier <tag>p</tag>',
+      '<strong>div + a</strong> selecciona a todos los elementos <tag>a</tag> que sigan directamente a un <tag>div</tag>'
     ],
     boardMarkup : `
     <tray>
@@ -248,14 +251,16 @@ var levels = [
     `
   },
   {
-    selectorName: "General Sibling Selector",
-    helpTitle: "Select elements that follows another element",
-    syntax: "A ~ B",
-    doThis : "Select the lemons beside the tray",
+    doThis : "Selecciona todos los <k>limones<t>lemon</t></k> al lado de la <k>bandeja<t>tray</t></k>",
     selector : "tray ~ lemon",
-    help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
+    selectorName: "Selector de Hermanos Generales",
+    helpTitle: "Selecciona varios elementos que vengan después de otro elemento",
+    syntax: "A ~ B",
+    help : "Puedes seleccionar a todos los 'hermanos' de un elemento que vengan después de este." +
+      "<br/>Es similar al Selector Adyacente <strong>A + B</strong> excepto por que éste toma a todos los elementos <strong>B</strong> que vengan después del <strong>A</strong> (en lugar de sólo uno).",
     examples : [
-      '<strong>A ~ B</strong> selects all <strong>B</strong> that follow a <strong>A</strong>'
+      '<strong>A ~ B</strong> selecciona a todos los <strong>B</strong> que sigan después de <strong>A</strong>',
+      '<strong>h3 ~ p</strong> selecciona a todos los párrafos <tag>p</tag> que vengan después de un título <tag>h3</tag> (y que se encuentren al mismo nivel de indentación)'
     ],
     boardMarkup : `
     <lemon/>
@@ -273,14 +278,17 @@ var levels = [
     `
   },
   {
-    selectorName: "Child Selector",
-    syntax: "A > B&nbsp;",
-    doThis : "Select the apple directly on a plate",
+    doThis : "Selecciona la manzana que está<br/>directamente sobre el plato",
     selector : "plate > apple",
-    helpTitle: "Select direct children of an element",
-    help : "You can select elements that are direct children of other elements. A child element is any element that is nested directly in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
+    selectorName: "Selector de Hijo",
+    syntax: "A&nbsp;>&nbsp;B",
+    helpTitle: "Selecciona a los hijos de un elemento<br/>(sólo al primer nivel de profundidad)",
+    help : "Puedes seleccionar los elementos <strong>B</strong> que sean hijos directos de cualquier elemento <strong>A</strong>." +
+      "<br><br/>Un elemento hijo viene siendo cualquier elemento que se encuentre contenido directamente dentro de otro elemento." + 
+      "<br>Los demás elementos que están más 'adentro' en niveles más profundos dentro del elemento <strong>A</stron> se llaman 'descendientes'.",
     examples : [
-      '<strong>A > B</strong> selects all <strong>B</strong> that are a direct children <strong>A</strong>'
+      '<strong>A > B</strong> selecciona todos los <strong>B</strong> que sean hijos directos de <strong>A</strong>',
+      '<strong>body > div</strong> selecciona a los bloques <tag>div</tag> "principales" que ponemos inmediatamente dentro del <tag>body</tag>'
     ],
     boardMarkup: `
     <plate>
@@ -297,17 +305,18 @@ var levels = [
     `
   },
   {
-    selectorName: "First Child Pseudo-selector",
-    helpTitle: "Select a first child element inside of another element",
-    doThis : "Select the top orange",
+    doThis : "Selecciona la <k>naranja<t>orange</t></k> que está más arriba",
     selector : "plate :first-child",
+    selectorName: 'Pseudo-clase del "Primer Hijo"',
+    helpTitle: "Selecciona al primer elemento hijo dentro de otro elemento",
     syntax: ":first-child",
-
-    help : "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors.",
+    help : "Puedes seleccionar al primer elemento hijo de un elemento dado." + 
+      "<br/>Como ya vimos, un elemento hijo es cualquier elemento que esté directamente contenido dentro de otro elemento." +
+      "<br/>Puedes combinar este selector de pseudo-clase con otros selectores.",
     examples : [
-      '<strong>:first-child</strong> selects all first child elements.',
-      '<strong>p:first-child</strong> selects all first child <tag>p</tag> elements.',
-      '<strong>div p:first-child</strong> selects all first child <tag>p</tag> elements that are in a <tag>div</tag>.'
+      '<strong>:first-child</strong> selecciona a todos los elementos que estén de primeros dentro de cualquier contenedor.',
+      '<strong>p:first-child</strong> selecciona cualquier elemento de tipo párrafo que sea el primer hijo de algún contenedor.',
+      '<strong>div p:first-child</strong> selecciona a todos los elementos <tag>p</tag> que estén de primero dentro de algún <tag>div</tag>.'
     ],
     boardMarkup :`
     <tray/>
@@ -321,15 +330,15 @@ var levels = [
     `
   },
   {
-    selectorName: "Only Child Pseudo-selector",
-    helpTitle: "Select an element that are the only element inside of another one.",
-    doThis : "Select the apple and the lemon on the plates",
+    doThis : "Selecciona la <k>manzana<t>apple</t></k> y el <k>limón<t>lemon</t></k> que están<br/>solos en sus platos",
     selector : "plate :only-child",
+    selectorName: "Pseudo-clase de 'Hijo Único' ",
+    helpTitle: "Selecciona a un elemento que sea el único elemento dentro de otro.",
     syntax: ":only-child",
-    help : "You can select any element that is the only element inside of another one.",
+    help : "Puedes seleccionar cualquier elemento que sea el único elemento dentro de otro.",
     examples : [
-      '<strong>span:only-child</strong> selects the <tag>span</tag> elements that are the only child of some other element.',
-      '<strong>ul li:only-child</strong> selects the only <tag>li</tag> element that are in a <tag>ul</tag>.'
+      '<strong>span:only-child</strong> selecciona los elementos <tag>span</tag> que sean el único hijo de cualquier otro elemento.',
+      '<strong>ul li:only-child</strong> selecciona los items de lista de toda lista <tag>ul</tag> que tenga sólo un único item <tag>li</tag>.'
     ],
     boardMarkup : `
     <plate>
